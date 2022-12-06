@@ -67,6 +67,18 @@ function checkTime(i) {
     return i;
 }
 
+// Backround
+var setBgColor = function () {
+    var bodyBg = document.body.style.backgroundColor;
+    var r = Math.floor( Math.random() * 256 );
+    var g = Math.floor( Math.random() * 256 );
+    var b = Math.floor( Math.random() * 256 );
+    return document.body.style.backgroundColor =  "rgb(" + r + "," + g + "," + b + ")";
+}
+
+window.setInterval(function(){
+    setBgColor();
+}, 5000);
 </script>
 <style>
     div {
