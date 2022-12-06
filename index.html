@@ -12,6 +12,12 @@
 </body>
 <script>
     var app = document.getElementById('app');
+    function gettime() {
+      today = new Date();
+ date = today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear();
+
+
+    var app = document.getElementById('app');
 
 var typewriter = new Typewriter(app, {
   loop: true
@@ -28,6 +34,39 @@ typewriter.typeString("Hello")
   .pauseFor(1500)
   .start();	
   setTimeout(() => {  gettime(); }, 17500);
+}
+
+function startTime() {
+    var to=new Date();
+    var h=to.getHours();
+    var m=to.getMinutes();
+    var s=to.getSeconds();
+    var ampm = "";
+    m = checkTime(m);
+    s = checkTime(s);
+    if (h > 12) {
+        h = h - 12;
+        ampm = " PM";
+    } else if (h == 12){
+        h = 12;
+        ampm = " PM";
+    } else if (h < 12){
+        ampm = " AM";
+    } else {
+        ampm = " PM";
+    };
+    if(h==0) {
+    h=12;
+    }
+time = h+":"+m+":"+s+ampm;
+var t = setTimeout(function(){startTime()},500);
+}
+startTime();
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
 </script>
 <style>
     div {
@@ -38,6 +77,5 @@ typewriter.typeString("Hello")
     text-align: left;
       font-size: 175px;
     }
-    
   </style>
 </html>
