@@ -25,17 +25,15 @@ var typewriter = new Typewriter(app, {
   loop: true
 });
 
-typewriter.typeString("Hello")
-  .pauseFor(250)
-  .deleteAll()
-  .typeString('The time is ' + time)
+
+typewriter.typeString('The time is ' + time)
   .pauseFor(1500)
   .deleteAll()
   .typeString("The date is " + date)
   //.typeString('<strong></strong>')
   .pauseFor(1500)
   .start();	
-  setTimeout(() => {  gettime(); }, 17500);
+  setTimeout(() => {  gettime(); }, 16000);
 }
 
 function startTime() {
