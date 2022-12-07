@@ -73,6 +73,14 @@ var setBgColor = function () {
     var r = Math.floor( Math.random() * 256 );
     var g = Math.floor( Math.random() * 256 );
     var b = Math.floor( Math.random() * 256 );
+    var all = r + g + b
+    if (all > 382.5) {
+        //light
+        document.getElementById("app").style.color = "rgb(0,0,0)";
+    } else {
+        //dark
+        document.getElementById("app").style.color = "rgb(255,255,255)";
+    }
     return document.body.style.backgroundColor =  "rgb(" + r + "," + g + "," + b + ")";
 }
 
